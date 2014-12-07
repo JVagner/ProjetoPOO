@@ -1,12 +1,14 @@
 
-public abstract class Pessoa {
+public class Pessoa {
 
 	private String nome;
 	private String matricula;
+	private String email;
 	
-	public Pessoa(String nome, String matricula){
+	public Pessoa(String nome, String matricula, String email){
 		this.nome = nome;
 		this.matricula = matricula;
+		this.email = email;
 	}
 
 	public String getNome() {
@@ -24,20 +26,13 @@ public abstract class Pessoa {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	
-	public abstract String getDescricao();
-	
-	public boolean equals(Object obj) {
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		if (matricula == null) {
-			if (other.matricula != null)
-				return false;
-		} else if (!matricula.equals(other.matricula))
-			return false;
-		return true;
+
+	public String getEmail() {
+		return email;
 	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 }
